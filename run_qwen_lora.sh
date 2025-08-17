@@ -4,12 +4,14 @@
 #SBATCH --error=logs/qwen2vl_lora_%j.err
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=64G
+#SBATCH --gres=gpu:h100:1
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=76G
 #SBATCH --time=12:00:00
 #SBATCH --partition=gpu
 #SBATCH --signal=SIGUSR1@90
+#SBATCH --mail-type=END
+#SBATCH --mail-user=yasin.senbabaoglu@czbiohub.org
 
 # Load environment
 module load anaconda
